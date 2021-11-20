@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pelota {
+            height: 100px;
+            width: 100px;
+            background: orange;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -25px 0 0 -25px;
+        }
+    </style>
+
+    <script src="annyang.min.js"></script>
+</head>
+<body>
+    <script src="comandos.js"></script>
+        <div class="pelota" id="pelota"></div>
+
+
+        <script>
+            let pelota = document.getElementById("pelota");
+            let velocidad = 50;
+            mTop = 0;
+            mLeft = 0;
+
+            document.addEventListener("keydown", function(e) {
+                if (e.keyCode == "39") {
+                    moverDerecha();
+                }
+
+                if (e.keyCode == "37") {
+                    moverIzquierda();
+                }
+
+                if (e.keyCode == "38") {
+                    moverArriba();
+                }
+
+                if (e.keyCode == "40") {
+                    moverAbajo();
+                }
+            })
+
+
+            function moverDerecha() {
+                mLeft += velocidad;
+                pelota.style.marginLeft = mLeft + "px";
+            }
+
+            function moverIzquierda() {
+                mLeft -= velocidad;
+                pelota.style.marginLeft = mLeft + "px";
+            }
+
+            function moverArriba() {
+                mTop -= velocidad;
+                pelota.style.marginTop = mTop + "px";
+            }
+
+            function moverAbajo() {
+                mTop += velocidad;
+                pelota.style.marginTop = mTop + "px";
+            }
+
+
+
+    
+        </script>
+    
+</body>
+</html>
